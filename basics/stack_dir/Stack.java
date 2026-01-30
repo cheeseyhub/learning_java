@@ -1,15 +1,15 @@
 package stack_dir;
 
 public class Stack {
-  private int[] stack = new int[10];
+  private int[] stack = new int[100];
   private int tos;
 
   public Stack() {
     tos = -1;
   }
 
-  public void push(int item) {
-    if (tos == 9) {
+  public synchronized void push(int item) {
+    if (tos == 100) {
       System.out.println("Stack is full");
     } else {
       stack[++tos] = item;
@@ -27,5 +27,12 @@ public class Stack {
 
   int peek() {
     return stack[tos];
+  }
+
+  public void printStack() {
+    for (int i : this.stack) {
+      System.out.printf(" %d ,  ", i);
+
+    }
   }
 }
