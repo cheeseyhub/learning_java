@@ -2,16 +2,28 @@ import java.io.*;
 
 public class app {
   public static void main(String args[]) {
-    String c;
-    System.out.println("This is a line ");
+    BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+    String str[] = new String[100];
+    System.out.println("Please Enter lines of text ");
 
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Please enter stop to print ");
+
     try {
-      c = br.readLine();
-      System.out.println(c);
+      for (int i = 0; i < 100; i++) {
+        str[i] = r.readLine();
+        if (str[i].equals("stop"))
+          break;
+      }
     } catch (IOException e) {
-      System.out.println("Could not read the stream.");
-    }
+      System.out.println("Error reading the input");
 
+    }
+    System.out.println("\nHere is your file ");
+
+    for (int i = 0; i < 100; i++) {
+      if (str[i].equals("stop"))
+        break;
+      System.out.println(str[i]);
+    }
   }
 }
