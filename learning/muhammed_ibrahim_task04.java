@@ -53,7 +53,7 @@ class Bulb {
   }
 }
 
-public class BulbDemo {
+public class muhammed_ibrahim_task04 {
   public static void main(String[] args) {
     Bulb[] arrayOfBulbs = new Bulb[10];
     Random r = new Random();
