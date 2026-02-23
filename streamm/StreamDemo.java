@@ -3,7 +3,6 @@ import java.util.stream.*;
 
 public class StreamDemo {
   public static void main(String args[]) {
-    Consumer<String> printWithSpace = name -> System.out.print(name + " ");
     ArrayList<Integer> myList = new ArrayList<>();
     myList.add(88);
     myList.add(7);
@@ -39,6 +38,15 @@ public class StreamDemo {
     System.out.print("Odd values greater than 5 :");
     oddvals.forEach((n) -> System.out.print(n + " "));
     System.out.println();
+
+    Optional<Integer> productObj = myList.parallelStream().reduce((a, b) -> a * b);
+    if (productObj.isPresent()) {
+      System.out.println("Product as Optional:  " + productObj.get());
+
+      int product = myList.parallelStream().reduce(1, (a, b) -> a * b, (a, b) -> a * b);
+      System.out.println("Product as int is : " + product);
+
+    }
 
   }
 }
