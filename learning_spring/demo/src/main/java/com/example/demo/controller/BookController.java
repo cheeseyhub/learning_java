@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,19 +20,19 @@ public class BookController {
 
   @GetMapping
   public String getBooks() {
-    return "The server is running.";
+    return "List of Books.";
   }
   @PostMapping
   public String displayBook(@RequestBody Book book) {
     return "The title of the book is " + book.getTitle();
 
   }
-  @PutMapping("book/{id}")
+  @PutMapping("/{id}")
   public String updateBook(@PathVariable String id, @RequestBody Book book) {
       
-    book.setTitle(book.getTitle());
-    return "The book with the id" + id + "is updated to " + book.getTitle();
+    return "The book with the id " + id + " is updated to " + book.getTitle();
   }
+
   
 
 }

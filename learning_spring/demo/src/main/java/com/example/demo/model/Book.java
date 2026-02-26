@@ -1,13 +1,16 @@
 package com.example.demo.model;
 
-public class Book {
-    String title = "";
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    public String getTitle() {
-        return title;
-    }
-    
+@Getter
+@Setter
+@NoArgsConstructor
+public class Book {
+    private Long id;
+    private String title = "";
+    private String author;
+
+
 }
