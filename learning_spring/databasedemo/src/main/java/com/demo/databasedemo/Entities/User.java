@@ -1,6 +1,5 @@
 package com.demo.databasedemo.Entities;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,7 +13,7 @@ import jakarta.persistence.GenerationType;
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private @Nullable Integer id;
+    private  Integer id;
     private String name;
     private String email;
     
